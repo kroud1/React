@@ -3,35 +3,37 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
 
-// const root = ReactDOM.createRoot(
-//   document.getElementById("root") as HTMLElement
-// );
-// const element = <h1>Hello, world</h1>;
-function tick(): any {
-  const element = (
-    <div>
-      <h1>Hello, world</h1>
-      <h2>It is{new Date().toLocaleTimeString()}</h2>
-    </div>
-  );
-  const root = ReactDOM.createRoot(
-    document.getElementById("root") as HTMLElement
-  );
-  root.render(
-    <React.StrictMode>
-      {element}
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+// function tick(): any {
+//   const element = (
+//     <div>
+//       <h1>Hello, world</h1>
+//       <h2>It is{new Date().toLocaleTimeString()}</h2>
+//     </div>
+//   );
+//   const root = ReactDOM.createRoot(
+//     document.getElementById("root") as HTMLElement
+//   );
+//   root.render(
+//     <React.StrictMode>
+//       <Router>
+//       <App />
+//       </Router>
+//     </React.StrictMode>
+//   );
+// }
+// setInterval(tick, 1000);
+root.render(
+  <React.StrictMode>
+    <Router>
       <App />
-    </React.StrictMode>
-  );
-}
-setInterval(tick, 1000);
-// root.render(
-//   <React.StrictMode>
-//     {element}
-//     <App />
-//   </React.StrictMode>
-// );
+      </Router>
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
