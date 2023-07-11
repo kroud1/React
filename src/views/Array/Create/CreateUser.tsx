@@ -4,7 +4,7 @@ interface CreateUserProps {
     username: string;
     email: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    onCreate: () => 
+    onCreate: () => void;
 }
 
 // 배열에 새로운 항목을 추가하는 방법

@@ -15,7 +15,7 @@ import Effect from './effect'
 import Todo from './views/Practice'
 import Hello from './props/hello'
 import Input from './views/Input'
-import ArrayRender from './views/ArrayRendering/UserList'
+import ArrayRender from './views/ArrayRendering/application'
 
 
 // interface ReactProps {
@@ -62,27 +62,27 @@ import ArrayRender from './views/ArrayRendering/UserList'
 // };
 
 function App() {
-  return(
+  return (
     <>
-    <State name='Seungah'/>
+      <State name="Seungah" />
       <Effect />
       <Todo />
-    {/* 라우트를 여러개 사용 시 Routes 안에 정의 해야함 
+      {/* 라우트를 여러개 사용 시 Routes 안에 정의 해야함 
     Path속성 : URL경로
     element속성 : 컴포넌트 지정
     npm install react-router-dom
     */}
       <Routes>
         <Wrapper>
-        {/* <Route path="/componets" element={<Components/>}/>
+          {/* <Route path="/componets" element={<Components/>}/>
         <Route path='/props' element={<Prop name='seungah'/>}/> */}
-        <Route path='hello' element={<Hello color = 'blue' name="Seungah"/>}/>
+          <Route path="hello" element={<Hello color="blue" name="Seungah" />} />
         </Wrapper>
-        <Route path='input' element={<Input/>}/>
-        <Route path="arrayRendering" element={<ArrayRender/>}/>
+        <Route path="input" element={<Input />} />
+        <Route path="arrayRendering" element={<ArrayRender />} />
       </Routes>
-      </>
-  )
+    </>
+  );
 }
 
 
