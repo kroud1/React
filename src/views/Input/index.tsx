@@ -1,6 +1,6 @@
 import React,{ ChangeEvent, useState } from 'react'
 
-interface d{
+interface InputState{
 name: string;
 nickname: string;
 }
