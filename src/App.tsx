@@ -4,8 +4,8 @@ import * as React from "react";
 // import Component from "./components/MenuAppBar";
 // import Component2 from "./components/MenuAppBar";
 // import Components from "./components";
-// import Wrapper from "./wrapper";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
+import Wrapper from "./props/Wrapper";
+import { BrowserRouter as Routes, Route } from "react-router-dom";
 // import Main from "./views/Main";
 // import MyPage from "./views/MyPage";
 // import About from "./views/About";
@@ -13,6 +13,8 @@ import * as React from "react";
 import State from './state'
 import Effect from './effect'
 import Todo from './views/Practice'
+import Hello from './props/hello'
+import Input from './views/Input'
 
 
 // interface ReactProps {
@@ -61,17 +63,22 @@ import Todo from './views/Practice'
 function App() {
   return(
     <>
-    {/* 라우트를 여러개 사용 시 Routes 안에 정의 해야함 
-    Path속성 : URL경로
-    element속성 : 컴포넌트 지정*/}
-    {/* <Routes>
-      <Route path="/componets" element={<Components/>}/>
-      <Route path='/props' element={<Prop name='seungah'/>}/>
-      </Routes> */}
-
-      <State name='Seungah'/>
+    <State name='Seungah'/>
       <Effect />
       <Todo />
+    {/* 라우트를 여러개 사용 시 Routes 안에 정의 해야함 
+    Path속성 : URL경로
+    element속성 : 컴포넌트 지정
+    npm install react-router-dom
+    */}
+      <Routes>
+        <Wrapper>
+        {/* <Route path="/componets" element={<Components/>}/>
+        <Route path='/props' element={<Prop name='seungah'/>}/> */}
+        <Route path='hello' element={<Hello color = 'blue' name="Seungah"/>}/>
+        </Wrapper>
+        <Route path='input' element={<Input/>}/>
+      </Routes>
       </>
   )
 }

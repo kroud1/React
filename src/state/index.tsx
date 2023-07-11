@@ -57,22 +57,29 @@ interface GreatingProps{
   name: string
 }
 // State 타입
-interface CounterState{
-  count: number;
-}
+// interface CounterState{
+//   count: number;
+// }
 // State 사용 예시
- const Index: React.FC<GreatingProps> = ({name}) => {
-    const [count, setCount] = useState<CounterState>({count : 0});
+ const Index: React.FC<GreatingProps> = () => {
+    const [count, setCount] = useState<number>(0);
 
     const incrementCount = () => {
-        setCount({count: count.count + 1});
+        setCount(prevCount => prevCount + 1);
+        // prevCount: 현재 상태값인 Count의 이전 상태값을 가리키는 변수
     };
+
+    const onDecrease = () => {
+      setCount( prevCount => prevCount - 1)
+    }
 
   return (
     <div>
-      <p>Hello, {name}</p>
-        <p>Count: {count.count}</p>
+      {/* <p>Hello, {name}</p> */}
+        <p>Count: {count}</p>
         <button onClick={incrementCount}>increment</button>
+        <button onClick={onDecrease}>onDecrease</button>
+        
     </div>
   )
 }
