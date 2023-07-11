@@ -1,13 +1,19 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, RefObject, useRef, useState } from "react";
+
+// 특정 DOM을 선택할 때: ref를 사용
+// 함수형 컴포넌트에서 ref 사용 시 useRef라는 Hook함수를 사용
 
 interface InputState {
   name: string;
   nickname: string;
 }
 
-const InputSample2 = () => {
+const InputSample3 = () => {
   // useState에서는 문자열이 아니라 객체 형태로 상태를 관리해 주어야 한다.
   const [inputs, setInputs] = useState<InputState>({ name: "", nickname: "" });
+
+  const nameInput = useRef<HTMLInputElement>();
+//   useRef()를 사용하여 Ref객체를 생성
 
   const { name, nickname } = inputs; // 비구조화 할당을 통해 값 추출
 
@@ -24,6 +30,10 @@ const InputSample2 = () => {
       name: "",
       nickname: "",
     });
+    if (nameInput.current) {
+      nameInput.current.focus();
+    //   input에 포커스를 하는 DOM API 호출
+    }
   };
 
   return (
@@ -34,6 +44,8 @@ const InputSample2 = () => {
         name="name"
         type="text"
         placeholder="이름"
+        ref={nameInput as unknown as RefObject<HTMLInputElement>}
+        // 선택하고 싶은 DOM에 ref값으로 설정(.current에 원하는 DOM에 지정)
       />
       <input
         onChange={onChange}
@@ -51,4 +63,4 @@ const InputSample2 = () => {
   );
 };
 
-export default InputSample2;
+export default InputSample3;

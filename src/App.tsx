@@ -15,6 +15,7 @@ import Effect from './effect'
 import Todo from './views/Practice'
 import Hello from './props/hello'
 import Input from './views/Input'
+import ArrayRender from './views/ArrayRendering/UserList'
 
 
 // interface ReactProps {
@@ -78,6 +79,7 @@ function App() {
         <Route path='hello' element={<Hello color = 'blue' name="Seungah"/>}/>
         </Wrapper>
         <Route path='input' element={<Input/>}/>
+        <Route path="arrayRendering" element={<ArrayRender/>}/>
       </Routes>
       </>
   )
