@@ -5,7 +5,7 @@ import * as React from "react";
 // import Component2 from "./components/MenuAppBar";
 // import Components from "./components";
 import Wrapper from "./props/Wrapper";
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // import Main from "./views/Main";
 // import MyPage from "./views/MyPage";
 // import About from "./views/About";
@@ -16,6 +16,7 @@ import Todo from './views/Practice'
 import Hello from './props/hello'
 import Input from './views/Input'
 import ArrayRender from './views/ArrayRendering/application'
+import Array from './views/Array/Execute'
 
 
 // interface ReactProps {
@@ -73,13 +74,12 @@ function App() {
     npm install react-router-dom
     */}
       <Routes>
-        <Wrapper>
           {/* <Route path="/componets" element={<Components/>}/>
         <Route path='/props' element={<Prop name='seungah'/>}/> */}
-          <Route path="hello" element={<Hello color="blue" name="Seungah" />} />
-        </Wrapper>
+        <Route path="/" element={<Wrapper><Hello color="blue"/></Wrapper>} />
         <Route path="input" element={<Input />} />
         <Route path="arrayRendering" element={<ArrayRender />} />
+        <Route path='/array' element={<Array />}/>
       </Routes>
     </>
   );
