@@ -17,6 +17,9 @@ import Hello from './props/hello'
 import Input from './views/Input'
 import ArrayRender from './views/ArrayRendering/application'
 import Array from './views/Array/Execute'
+import Greeting from "./views/Greeting/Greeting";
+import Counter from "./views/Counter";
+import MyForm from "./views/MyForm";
 
 
 // interface ReactProps {
@@ -63,11 +66,15 @@ import Array from './views/Array/Execute'
 // };
 
 function App() {
+  const onClick = () => {}
+  const onSubmit = (form: {name: string, description: string}) =>{
+    console.log(form);
+  }
   return (
     <>
-      <State name="Seungah" />
+      {/* <State name="Seungah" />
       <Effect />
-      <Todo />
+      <Todo /> */}
       {/* 라우트를 여러개 사용 시 Routes 안에 정의 해야함 
     Path속성 : URL경로
     element속성 : 컴포넌트 지정
@@ -80,6 +87,10 @@ function App() {
         <Route path="input" element={<Input />} />
         <Route path="arrayRendering" element={<ArrayRender />} />
         <Route path='/array' element={<Array />}/>
+        <Route path="/greeting" element={<Greeting name="Seungah" onClick={onClick}/>}/>
+        <Route path="/counter" element={<Counter />}/>
+        <Route path="/form" element={<MyForm onSubmit={onSubmit}/>}/>
+        {/* <Route path="/reducerSample" element={<reducerSample/>}/> */}
       </Routes>
     </>
   );
