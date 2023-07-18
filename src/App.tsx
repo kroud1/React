@@ -20,8 +20,10 @@ import Array from './views/Array/Execute'
 import Greeting from "./views/Greeting/Greeting";
 import Counter from "./views/Counter";
 import MyForm from "./views/MyForm";
-
-
+import CustomHooks from "./hooks/index";
+import CostomHooksPractice from "./hooks/Practice/index"
+import ContextApi from "./contextAPI"
+import ContextApiLogIn from "./contextAPI/Practice"
 // interface ReactProps {
 //   name?: string;
 //   color: string;
@@ -91,6 +93,10 @@ function App() {
         <Route path="/counter" element={<Counter />}/>
         <Route path="/form" element={<MyForm onSubmit={onSubmit}/>}/>
         {/* <Route path="/reducerSample" element={<reducerSample/>}/> */}
+        <Route path="/customHooks" element={<CustomHooks/>}/>
+        <Route path="/costomHooksPractice" element={<CostomHooksPractice/>}/>
+        <Route path="/contextApi" element={<ContextApi/>}/>
+        <Route path="/contextApiLogIn" element={<ContextApiLogIn/>}/>
       </Routes>
     </>
   );
