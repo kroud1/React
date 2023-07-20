@@ -1,29 +1,34 @@
-import "./App.css";
-import * as React from "react";
+import './App.css';
+import * as React from 'react';
 // import Mui from "./Lecture/Mui";
 // import Component from "./components/MenuAppBar";
 // import Component2 from "./components/MenuAppBar";
 // import Components from "./components";
-import Wrapper from "./props/Wrapper";
-import { Route, Routes } from "react-router-dom";
+import Wrapper from './props/Wrapper';
+import { Route, Routes } from 'react-router-dom';
 // import Main from "./views/Main";
 // import MyPage from "./views/MyPage";
 // import About from "./views/About";
 // import Prop from './props/prop02'
-import State from './state'
-import Effect from './effect'
-import Todo from './views/Practice'
-import Hello from './props/hello'
-import Input from './views/Input'
-import ArrayRender from './views/ArrayRendering/application'
-import Array from './views/Array/Execute'
-import Greeting from "./views/Greeting/Greeting";
-import Counter from "./views/Counter";
-import MyForm from "./views/MyForm";
-import CustomHooks from "./hooks/index";
-import CostomHooksPractice from "./hooks/Practice/index"
-import ContextApi from "./contextAPI"
-import ContextApiLogIn from "./contextAPI/Practice"
+import State from './state';
+import Effect from './effect';
+import Todo from './views/Practice';
+import Hello from './props/hello';
+import Input from './views/Input';
+import ArrayRender from './views/ArrayRendering/application';
+import Array from './views/Array/Execute';
+import Greeting from './views/Greeting/Greeting';
+import Counter from './views/Counter';
+import MyForm from './views/MyForm';
+import CustomHooks from './hooks/index';
+import CostomHooksPractice from './hooks/Practice/index';
+import ContextApi from './contextAPI';
+import ContextApiLogIn from './contextAPI/Practice';
+import StyledComponents from './styledComponents';
+import StyledComponents2 from './styledComponents/practice';
+import FetchAPI from './restAPI/PostListFetch';
+import AxiosAPI from './restAPI/PostListAxios';
+import AsyncAPI from './restAPI/PostListAsync';
 // interface ReactProps {
 //   name?: string;
 //   color: string;
@@ -68,10 +73,10 @@ import ContextApiLogIn from "./contextAPI/Practice"
 // };
 
 function App() {
-  const onClick = () => {}
-  const onSubmit = (form: {name: string, description: string}) =>{
+  const onClick = () => {};
+  const onSubmit = (form: { name: string; description: string }) => {
     console.log(form);
-  }
+  };
   return (
     <>
       {/* <State name="Seungah" />
@@ -83,26 +88,38 @@ function App() {
     npm install react-router-dom
     */}
       <Routes>
-          {/* <Route path="/componets" element={<Components/>}/>
+        {/* <Route path="/componets" element={<Components/>}/>
         <Route path='/props' element={<Prop name='seungah'/>}/> */}
-        <Route path="/" element={<Wrapper><Hello color="blue"/></Wrapper>} />
+        <Route
+          path="/"
+          element={
+            <Wrapper>
+              <Hello color="blue" />
+            </Wrapper>
+          }
+        />
         <Route path="input" element={<Input />} />
         <Route path="arrayRendering" element={<ArrayRender />} />
-        <Route path='/array' element={<Array />}/>
-        <Route path="/greeting" element={<Greeting name="Seungah" onClick={onClick}/>}/>
-        <Route path="/counter" element={<Counter />}/>
-        <Route path="/form" element={<MyForm onSubmit={onSubmit}/>}/>
+        <Route path="/array" element={<Array />} />
+        <Route
+          path="/greeting"
+          element={<Greeting name="Seungah" onClick={onClick} />}
+        />
+        <Route path="/counter" element={<Counter />} />
+        <Route path="/form" element={<MyForm onSubmit={onSubmit} />} />
         {/* <Route path="/reducerSample" element={<reducerSample/>}/> */}
-        <Route path="/customHooks" element={<CustomHooks/>}/>
-        <Route path="/costomHooksPractice" element={<CostomHooksPractice/>}/>
-        <Route path="/contextApi" element={<ContextApi/>}/>
-        <Route path="/contextApiLogIn" element={<ContextApiLogIn/>}/>
+        <Route path="/customHooks" element={<CustomHooks />} />
+        <Route path="/costomHooksPractice" element={<CostomHooksPractice />} />
+        <Route path="/contextApi" element={<ContextApi />} />
+        <Route path="/contextApiLogIn" element={<ContextApiLogIn />} />
+        <Route path="/styledComponents" element={<StyledComponents />} />
+        <Route path="/styledComponents2" element={<StyledComponents2 />} />
+        <Route path="/fetchAPI" element={<FetchAPI />} />
+        <Route path="/axiosAPI" element={<AxiosAPI />} />
+        <Route path="/asyncAPI" element={<AsyncAPI />} />
       </Routes>
     </>
   );
 }
-
-
-
 
 export default App;
