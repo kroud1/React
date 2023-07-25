@@ -5,7 +5,7 @@ import * as React from 'react';
 // import Component2 from "./components/MenuAppBar";
 // import Components from "./components";
 import Wrapper from './props/Wrapper';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Router, Routes } from 'react-router-dom';
 // import Main from "./views/Main";
 // import MyPage from "./views/MyPage";
 // import About from "./views/About";
@@ -29,6 +29,9 @@ import StyledComponents2 from './styledComponents/practice';
 import FetchAPI from './restAPI/PostListFetch';
 import AxiosAPI from './restAPI/PostListAxios';
 import AsyncAPI from './restAPI/PostListAsync';
+import Zustand from './zustand/index';
+import ZustandId from './zustand/views';
+import ZustandCheck from './zustand/views/check';
 // interface ReactProps {
 //   name?: string;
 //   color: string;
@@ -87,37 +90,45 @@ function App() {
     element속성 : 컴포넌트 지정
     npm install react-router-dom
     */}
-      <Routes>
-        {/* <Route path="/componets" element={<Components/>}/>
+      
+        <Routes>
+          {/* <Route path="/componets" element={<Components/>}/>
         <Route path='/props' element={<Prop name='seungah'/>}/> */}
-        <Route
-          path="/"
-          element={
-            <Wrapper>
-              <Hello color="blue" />
-            </Wrapper>
-          }
-        />
-        <Route path="input" element={<Input />} />
-        <Route path="arrayRendering" element={<ArrayRender />} />
-        <Route path="/array" element={<Array />} />
-        <Route
-          path="/greeting"
-          element={<Greeting name="Seungah" onClick={onClick} />}
-        />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/form" element={<MyForm onSubmit={onSubmit} />} />
-        {/* <Route path="/reducerSample" element={<reducerSample/>}/> */}
-        <Route path="/customHooks" element={<CustomHooks />} />
-        <Route path="/costomHooksPractice" element={<CostomHooksPractice />} />
-        <Route path="/contextApi" element={<ContextApi />} />
-        <Route path="/contextApiLogIn" element={<ContextApiLogIn />} />
-        <Route path="/styledComponents" element={<StyledComponents />} />
-        <Route path="/styledComponents2" element={<StyledComponents2 />} />
-        <Route path="/fetchAPI" element={<FetchAPI />} />
-        <Route path="/axiosAPI" element={<AxiosAPI />} />
-        <Route path="/asyncAPI" element={<AsyncAPI />} />
-      </Routes>
+          <Route
+            path="/"
+            element={
+              <Wrapper>
+                <Hello color="blue" />
+              </Wrapper>
+            }
+          />
+          <Route path="input" element={<Input />} />
+          <Route path="arrayRendering" element={<ArrayRender />} />
+          <Route path="/array" element={<Array />} />
+          <Route
+            path="/greeting"
+            element={<Greeting name="Seungah" onClick={onClick} />}
+          />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/form" element={<MyForm onSubmit={onSubmit} />} />
+          {/* <Route path="/reducerSample" element={<reducerSample/>}/> */}
+          <Route path="/customHooks" element={<CustomHooks />} />
+          <Route
+            path="/costomHooksPractice"
+            element={<CostomHooksPractice />}
+          />
+          <Route path="/contextApi" element={<ContextApi />} />
+          <Route path="/contextApiLogIn" element={<ContextApiLogIn />} />
+          <Route path="/styledComponents" element={<StyledComponents />} />
+          <Route path="/styledComponents2" element={<StyledComponents2 />} />
+          <Route path="/fetchAPI" element={<FetchAPI />} />
+          <Route path="/axiosAPI" element={<AxiosAPI />} />
+          <Route path="/asyncAPI" element={<AsyncAPI />} />
+          <Route path="/zustand" element={<Zustand />} />
+          <Route path="/zustandId" element={<ZustandId />} />
+          <Route path="/zustandCheck" element={<ZustandCheck />} />
+        </Routes>
+      
     </>
   );
 }
